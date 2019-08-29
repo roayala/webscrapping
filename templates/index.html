@@ -1,20 +1,186 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Mission to Mars</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Bootstrap links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 
-<body>
-    <h1>{{ mars[0].Title }}</h1>
-    <br />
-    <p>{{ mars[0].Extract }}</p>
-    <!-- {{ mars[0].Featured Image }} -->
-    <!-- <img src=a lt="" /> -->
-</body>
+<body class="body bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand title1 " href="index.html">Mission to Mars</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
+    <main role="main" class="">
+        <br />
+        <div class="jumbotron text-center p-1">
+            <span class="text-center "><h1 class="display-1">Mission to mars</h1></span
+        >
+        <button type="button" class="btn btn-info">Scrape</button>
+      </div>
+
+      <div class="container fluid m-auto">
+        <div class="row justify-content-start m-auto">
+          <div class="col-md-12 border rounded-lg bg-white p-4">
+            <div class="jumbotron p-1">
+              <h2>Latest News:</h2>
+            </div>
+
+            <h4>{{ mars[0].Title }}</h4>
+            <p>{{ mars[0].Extract }}</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="jumbotron p-1">
+                  <h2>Mars Weather:</h2>
+                </div>
+                <p>{{ mars[0].MarsWeather }}</p>
+              </div>
+              <div class="col-md-6">
+                <div class="jumbotron p-1">
+                  <h2>Mars Info:</h2>
+                </div>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Characteristic</th>
+                      <th scope="col">Data</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Polar Diameter:</td>
+                      <td>{{ mars[0].MarsFacts["Polar Diameter:"] }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Mass:</td>
+                      <td>{{ mars[0].MarsFacts["Mass:"] }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Moons:</td>
+                      <td colspan="2">{{ mars[0].MarsFacts["Moons:"] }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Orbit Distance:</td>
+                      <td colspan="2">
+                        {{ mars[0].MarsFacts["Orbit Distance:"] }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Orbit Period:</td>
+                      <td colspan="2">
+                        {{ mars[0].MarsFacts["Orbit Period:"] }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td>Surface Temperature:</td>
+                      <td colspan="2">
+                        {{ mars[0].MarsFacts["Surface Temperature:"] }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td>First Record:</td>
+                      <td colspan="2">
+                        {{ mars[0].MarsFacts["First Record:"] }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <td>Recorded By:</td>
+                      <td colspan="2">
+                        {{ mars[0].MarsFacts["Recorded By:"] }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row m-auto">
+          <div class="col-md-12 border rounded-lg bg-white p-4">
+            <div class="jumbotron p-1">
+              <h2>Featured Image</h2>
+            </div>
+            <img
+              class="img-fluid p-0 rounded mx-auto d-block"
+              width="65%"
+              src="{{ mars[0].FeaturedImage }}"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="row m-auto">
+          <div class="col-md-12 border rounded-lg bg-white p-4">
+            <div class="jumbotron p-1">
+              <h2>Mars Hemispheres</h2>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <h3>{{ mars[0].MarsHemispheres[0].title }}</h3>
+                <img
+                  class="img-fluid p-0 rounded mx-auto d-block"
+                  width="70%"
+                  src="{{ mars[0].MarsHemispheres[0].img_url }}"
+                />
+              </div>
+              <div class="col-md-6">
+                <h3>{{ mars[0].MarsHemispheres[1].title }}</h3>
+                <img
+                  class="img-fluid p-0 rounded mx-auto d-block"
+                  width="65%"
+                  src="{{ mars[0].MarsHemispheres[1].img_url }}"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <h3>{{ mars[0].MarsHemispheres[2].title }}</h3>
+                <img
+                  class="img-fluid p-0 rounded mx-auto d-block"
+                  width="65%"
+                  src="{{ mars[0].MarsHemispheres[2].img_url }}"
+                />
+              </div>
+              <div class="col-md-6">
+                <h3>{{ mars[0].MarsHemispheres[3].title }}</h3>
+                <img
+                  class="img-fluid p-0 rounded mx-auto d-block"
+                  width="65%"
+                  src="{{ mars[0].MarsHemispheres[3].img_url }}"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <br />
+
+    <footer class="card-footer">
+      <p>&copy; ROAS Copyright Coding Bootcamp 2019</p>
+    </footer>
+  </body>
 </html>
