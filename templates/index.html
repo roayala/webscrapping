@@ -30,7 +30,11 @@
         <div class="jumbotron text-center p-1">
             <span class="text-center "><h1 class="display-1">Mission to mars</h1></span
         >
-        <button type="button" class="btn btn-info">Scrape</button>
+        <button type="button" class="btn">
+          <form method="POST" class="bg-info">
+            {{ form.hidden_tag() }}{{ form.submit() }}
+          </form>
+        </button>
       </div>
 
       <div class="container fluid m-auto">
@@ -51,7 +55,7 @@
               </div>
               <div class="col-md-6">
                 <div class="jumbotron p-1">
-                  <h2>Mars Info:</h2>
+                  <h2>Mars Planet Profile:</h2>
                 </div>
                 <table class="table table-sm">
                   <thead>
